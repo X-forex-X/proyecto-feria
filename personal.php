@@ -1,8 +1,31 @@
+<?php
+include "conexion.php";
+// var_dump($_POST);
+// $query="INSERT INTO `personal`(`cargo`, `nombre`, `apellido`, `dni`, `fecha`) VALUES (".$_POST['cargo'].",".$_POST['nombre-pers'].",".$_POST['ape-pers'].",".$_POST['dni-pers'].",".$_POST['fecha-pers'].")";
+// $res=mysqli_query($con, $query);
+// echo $query;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $cargo = $_POST['cargo'] ?? '';
+    $nombre = $_POST['nombre-pers'] ?? '';
+    $apellido = $_POST['ape-pers'] ?? '';
+    $dni = $_POST['dni-pers'] ?? '';
+    $fecha = $_POST['fecha-pers'] ?? '';
+
+    $query = "INSERT INTO personal (cargo, nombre, apellido, dni, fecha) 
+              VALUES ('$cargo', '$nombre', '$apellido', '$dni', '$fecha')";
+
+    if (mysqli_query($con, $query)) {
+        echo "Personal registrado con éxito.";
+    } else {
+        echo "Error: " . mysqli_error($con);
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,". initial-scale=1.0">
     <title>Personal</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,18 +36,18 @@
         </div>
         <div id="personal">
             <h2>Personal</h2>
-           <form>
+           <form id="formulario-pers" method="POST" action="personal.php">
              <label>
                 <span>Nombre/s: </span>
-                <input type="text" id="nombre-al" placeholder="Ingrese nombre/s">
+                <input type="text" name="nombre-pers" placeholder="Ingrese nombre/s">
             </label>
             <label>
                 <span>Apellido/s: </span>
-                <input type="text" id="ape-al" placeholder="Ingrese apellido/s">
+                <input type="text" name="ape-pers" placeholder="Ingrese apellido/s">
             </label>
              <label>
                 <span>Número de documento: </span>
-                <input type="number" id="dni-al" placeholder="Solo números">
+                <input type="number" name="dni-pers" placeholder="Solo números">
             </label>
              <label>
                 <span>Cargo: </span>
@@ -33,16 +56,16 @@
             </label>
              <label>
                 <span>Día: </span>
-                <input type="date" id="fecha-pers">
+                <input type="date" name="fecha-pers">
             </label>
                 <div class="btn-enviar">
-                <button type="submit" name="submit">Enviar Formulario</button>
+                <button type="submit" name="submit">Enviar</button>
                 </div>
            </form>
         </div>
     </div>
         <div class="atras">
-        <button><a href="index.html">Volver</a></button>
+        <button><a href="index.php">Volver</a></button>
     </div>
 </body>
 </html>

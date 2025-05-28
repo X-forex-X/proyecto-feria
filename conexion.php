@@ -12,12 +12,17 @@ $database = "asistencia";
 //     die("Conexión fallida: " . $con->connect_error);
 // }
 // echo "Conexión exitosa";
-$con= mysqli_connect("localhost", "root", "", "asistencia");
+// Crear conexión
+$con = new mysqli($servername, $username, $password, $database);
 // if($con){
 //     echo "okey";
 // }else{
 //     echo "error";
 // }
+
+if ($con->connect_error) {
+    die("Error de conexión: " . $con->connect_error);
+}
 
 
 ?>

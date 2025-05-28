@@ -12,14 +12,14 @@
         <h2>Seleccione que formulario quiere ver</h2>
         <div id="ver-lista">
             <h3>Ver lista cargada</h3>
-            <button><a href="listado.html">Ver</a></button>
+            <button><a href="listado.php">Ver</a></button>
         </div>
         <h2>Cargar datos</h2>
         <div>
-            <button><a href="alumno.html">Alumnado</a></button>
+            <button><a href="alumno.php">Alumnado</a></button>
         </div>
         <div>
-            <button><a href="personal.html">Personal</a></button>
+            <button><a href="personal.php">Personal</a></button>
         </div>
     </div>
 </body>

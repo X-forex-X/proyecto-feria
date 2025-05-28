@@ -1,3 +1,12 @@
+<?php
+include "conexion.php";
+$query="SELECT * FROM `personal`";
+$res=mysqli_query($con, $query);
+// var_dump($res);
+while ($row=mysqli_fetch_array($res)) {
+    echo $row["cargo"]." ". $row["nombre"]." ".$row["apellido"]." ".$row["dni"]." ".$row["fecha"]."<br>";
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,7 +16,7 @@
 </head>
 <body>
     <div class="atras">
-        <button><a href="listado.html">Volver</a></button>
+        <button><a href="listado.php">Volver</a></button>
     </div>
 </body>
 </html>

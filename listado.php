@@ -10,13 +10,13 @@
     <br>
     <h2>Seleccione la lista que desea ver</h2>
         <div>
-            <button><a href="lista-alumno.html">Alumnado</a></button>
+            <button><a href="lista-alumno.php">Alumnado</a></button>
         </div>
         <div>
-            <button><a href="lista-personal.html">Personal</a></button>
+            <button><a href="lista-personal.php">Personal</a></button>
         </div>
             <div class="atras">
-        <button><a href="index.html">Volver</a></button>
+        <button><a href="index.php">Volver</a></button>
     </div>
 </body>
 </html>
