@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </label>
              <label>
                 <span>Número de documento: </span>
-                <input type="number" name="dni-al" placeholder="Solo números">
+                <input type="number" name="dni-al" placeholder="Solo números" min=0>
             </label>
              <label>
                 <span>Año: </span>

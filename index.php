@@ -21,6 +21,9 @@
         <div>
             <button><a href="personal.php">Personal</a></button>
         </div>
+        <div>
+            <button><a href="registrar_entrada.php">Entrada</a></button>
+        </div>
     </div>
 </body>
 </html>
