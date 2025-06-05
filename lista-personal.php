@@ -1,3 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de personal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="barra-nav-pers">
+        <nav>
+            <ul id="menu-pers">
+               <li><a href="#index.php">Inicio</a></li>
+               <li><a href="#">Cargo</a>
+                <ul id="desplegable-cargo">
+                    <li><a href="#">Auxiliar</a></li>
+                    <li><a href="#">Docente</a></li>
+                </ul>
+            </li>
+               <li><a href="#listado.php">Volver</a></li>
+            </ul>
+        </nav>
+    </div>
+
+     <!-- <div class="atras">
+        <button><a href="listado.php">Volver</a></button>
+    </div> -->
+</body>
+</html>
+
 <?php
 include "conexion.php";
 $query = "SELECT * FROM `personal`";
@@ -17,7 +47,7 @@ while ($row = mysqli_fetch_array($res)) {
                 <td>{$row["fecha"]}</td>
                 <td>
                     <input type='text' name='uid' value='{$row["rfid_uid"]}' placeholder='Escaneá aquí' required>
-                    <input type='hidden' name='id_personal' value='{$row["id_personal"]}'>
+                    <input type='hidden' name='id_personal' value='{$row["dni"]}'>
                 </td>
                 <td><button type='submit'>Guardar</button></td>
             </form>
@@ -25,3 +55,4 @@ while ($row = mysqli_fetch_array($res)) {
 }
 echo '</table>';
 ?>
+

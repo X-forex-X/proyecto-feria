@@ -10,9 +10,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $apellido = $_POST['ape-pers'] ?? '';
     $dni = $_POST['dni-pers'] ?? '';
     $fecha = $_POST['fecha-pers'] ?? '';
+    $rfid_uid = $_POST['rfid_uid'] ?? '';
 
-    $query = "INSERT INTO personal (cargo, nombre, apellido, dni, fecha) 
-              VALUES ('$cargo', '$nombre', '$apellido', '$dni', '$fecha')";
+    $query = "INSERT INTO personal (cargo, nombre, apellido, dni, fecha, rfid_uid) 
+        VALUES ('$cargo', '$nombre', '$apellido', '$dni', '$fecha', '$rfid_uid')";
+
 
     if (mysqli_query($con, $query)) {
         echo "Personal registrado con éxito.";
@@ -58,6 +60,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <span>Día: </span>
                 <input type="date" name="fecha-pers">
             </label>
+            <label>
+              <span>UID RFID: </span>
+                <input type="text" name="rfid_uid" placeholder="Escaneá" autofocus>
+            </label>
+
                 <div class="btn-enviar">
                 <button type="submit" name="submit">Enviar</button>
                 </div>

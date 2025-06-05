@@ -9,10 +9,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ano = $_POST['año-al'] ?? '';
     $division = $_POST['division-al'] ?? '';
     $fecha = $_POST['fecha-al'] ?? '';
+$rfid_uid = $_POST['rfid_uid'] ?? '';
 
-    // Insertar en la base de datos
-    $query = "INSERT INTO alumnos (nombre, apellido, dni, ano, division, fecha) 
-              VALUES ('$nombre', '$apellido', '$dni', '$ano', '$division', '$fecha')";
+$query = "INSERT INTO alumnos (nombre, apellido, dni, ano, division, fecha, rfid_uid) 
+          VALUES ('$nombre', '$apellido', '$dni', '$ano', '$division', '$fecha', '$rfid_uid')";
+
 
     if (mysqli_query($con, $query)) {
         echo "Alumno registrado con éxito.";
@@ -61,6 +62,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <span>Día: </span>
                 <input type="date" name="fecha-al">
             </label>
+            <label>
+                <span>UID RFID: </span>
+                <input type="text" name="rfid_uid" placeholder="Escaneá" autofocus>
+
+            </label>
+
                 <div class="btn-enviar">
                 <button type="submit" name="submit">Enviar</button>
                 </div>
