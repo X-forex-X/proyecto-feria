@@ -7,9 +7,40 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     <div class="atras">
-        <button><a href="listado.php">Volver</a></button>
+    <div id="barra-nav-al">
+        <nav>
+            <ul id="menu-al">
+               <li><a href="#index.php">Inicio</a></li>
+               <li><a href="#">Curso</a>
+                <ul id="desplegable-curso">
+                    <li><a href="#">1ro</a></li>
+                    <li><a href="#">2do</a></li>
+                    <li><a href="#">3ro</a></li>
+                    <li><a href="#">4to</a></li>
+                    <li><a href="#">5to</a></li>
+                    <li><a href="#">6to</a></li>
+                    <li><a href="#">7mo</a></li>
+                </ul>
+            </li>
+                <li><a href="#">División</a>
+                <ul id="desplegable-division">
+                    <li><a href="#">A</a></li>
+                    <li><a href="#">B</a></li>
+                    <li><a href="#">C</a></li>
+                    <li><a href="#">D</a></li>
+                    <li><a href="#">E</a></li>
+                    <li><a href="#">F</a></li>
+                    <li><a href="#">G</a></li>
+                    <li><a href="#">H</a></li>
+                </ul>
+            </li>
+               <li><a href="#listado.php">Volver</a></li>
+            </ul>
+        </nav>
     </div>
+     <!-- <div class="atras">
+        <button><a href="listado.php">Volver</a></button>
+    </div> -->
 </body>
 </html>
 
